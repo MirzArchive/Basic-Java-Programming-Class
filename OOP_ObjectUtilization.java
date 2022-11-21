@@ -1,6 +1,9 @@
 public class OOP_ObjectUtilization {
     public static void main(String[] args) {
-        OOP_DiceRoller diceRoll = new OOP_DiceRoller();
-        System.out.printf("Random number : %d",diceRoll.roll(20, 69));
+        OOP_Static friend1 = new OOP_Static("Spongebob");
+        OOP_Static friend2 = new OOP_Static("Patrick");
+        OOP_Static friend3 = new OOP_Static("Squidward");
+
+        System.out.printf("%d",OOP_Static.numberOfFriends);
     }
 }
