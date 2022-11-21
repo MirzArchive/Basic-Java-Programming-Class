@@ -14,5 +14,6 @@ public class QuickCode {
         int pick = sc.nextInt();
 
         System.out.printf("%s",array[pick]);
+        sc.close();
     }
 }
