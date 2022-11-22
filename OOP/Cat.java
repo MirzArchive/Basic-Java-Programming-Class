@@ -5,8 +5,8 @@ public class Cat extends Animal{
         super(name);
     }
 
-    public static void main(String[] args) {
-        Animal cat = new Animal("Snopo");
-        cat.speak();
+    @Override
+    void speak() {
+        System.out.printf("%s miaw miaw nibba ","");
     }
 }
