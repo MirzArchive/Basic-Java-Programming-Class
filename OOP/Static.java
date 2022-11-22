@@ -1,7 +1,8 @@
-public class OOP_Static {
+package OOP;
+public class Static {
     String name;
     static int numberOfFriends;
-    OOP_Static(String name) {
+    Static(String name) {
         this.name = name;
         numberOfFriends++;
     }

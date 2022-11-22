@@ -1,8 +1,9 @@
-public class OOP_Vehicle {
+package OOP;
+public class Vehicle {
     double speed;
     String name;
 
-    OOP_Vehicle(String name) {
+    Vehicle(String name) {
         this.name = name;
     }
 

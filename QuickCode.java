@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class QuickCode {
     public static void main(String[] args) {
-
-        
         Scanner sc = new Scanner(System.in);
         int length = sc.nextInt();
         sc.nextLine();
@@ -18,5 +16,4 @@ public class QuickCode {
         System.out.printf("%s",array[pick]);
         sc.close();
     }
-    
 }

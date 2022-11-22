@@ -1,5 +1,6 @@
-public class OOP_Car extends OOP_Vehicle{
-    OOP_Car(String name) {
+package OOP;
+public class Car extends Vehicle{
+    Car(String name) {
         super(name);
     }
 }

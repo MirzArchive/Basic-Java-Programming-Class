@@ -1,6 +1,7 @@
-public class OOP_ObjectUtilize {
+package OOP;
+public class ObjectUtilize {
     public static void main(String[] args) {
-        OOP_Car car = new OOP_Car("Honda");
+        Car car = new Car("Honda");
         car.gas();
     }
 }
