@@ -7,6 +7,6 @@ public class Cat extends Animal{
 
     @Override
     void speak() {
-        System.out.printf("%s miaw miaw nibba ","");
+        System.out.printf("%s miaw miaw nibba ",name);
     }
 }
