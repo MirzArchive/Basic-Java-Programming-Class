@@ -7,4 +7,9 @@ public class SuperHuman extends Human{
         super(name, age);
         this.power = power;
     }
+
+    public String getData() {
+        return super.getData() + this.power;
+    }
+
 }
