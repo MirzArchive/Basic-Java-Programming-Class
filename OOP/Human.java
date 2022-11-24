@@ -8,4 +8,8 @@ public class Human {
         this.name = name;
         this.age = age;
     }
+
+    public String getData() {
+        return this.name + "\n" + this.age + "\n";
+    }
 }
