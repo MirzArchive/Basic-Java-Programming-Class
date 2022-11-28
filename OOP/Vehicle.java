@@ -1,10 +1,11 @@
 package OOP;
-public class Vehicle {
-    double speed;
-    String name;
+public abstract class Vehicle {
+    protected double speed;
+    protected String name;
 
-    Vehicle(String name) {
+    Vehicle(String name, int speed) {
         this.name = name;
+        this.speed = speed;
     }
 
     void gas() {

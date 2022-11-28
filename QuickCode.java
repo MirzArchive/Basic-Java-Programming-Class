@@ -17,6 +17,7 @@ public class QuickCode {
         int targetX = Integer.parseInt(sc.next());
         int targetY = Integer.parseInt(sc.next());
         sc.nextLine();
+        board[targetX][targetY] = "O";
 
         int counter = sc.nextInt();
         for (int i = 0; i < counter; i++) {
@@ -27,17 +28,21 @@ public class QuickCode {
                 System.out.printf("Bullseye\n");
                 board[targetX][targetY] = "W";
             } 
-            else if ((row == targetX - 1 || row == targetX + 1) ^ 
-            (column == targetY - 1 || column == targetY + 1)) {
+            else if (row + 1 == targetX && column == targetY || row == targetX && column == targetY + 1) {
                 System.out.printf("Near Miss\n");
                 board[row][column] = "X";
-            } 
+            }
+            else if (row - 1 == targetX && column == targetY || row == targetX && column == targetY + 1) {
+                System.out.printf("Near Miss\n");
+                board[row][column] = "X";
+            }
             else {
                 System.out.printf("Miss\n");
                 board[row][column] = "X";
             }
             getBoard(board);
         }
+        sc.close();
     }
 
     private static void getBoard(String board[][]) {
