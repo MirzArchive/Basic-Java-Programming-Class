@@ -8,4 +8,8 @@ public class Enemy extends Entity{
         this.baseAtk = baseAtk;
         this.type = type;
     }
+
+    void doAttack (Hero theHero) {
+        theHero.health -= baseAtk;
+    }
 }
