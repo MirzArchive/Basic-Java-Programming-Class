@@ -1,6 +1,12 @@
 package battleGame;
-public class Hero {
-    public String nama;
-    public int hp = 1000;
-    public int atk = 80;
+public class Hero extends Entity{
+    int baseAtk;
+    String roles;
+
+    Hero(String name, int health, int baseAtk, String roles) {
+        super(name, health);
+        this.baseAtk = baseAtk;
+        this.roles = roles;
+    }
+
 }
