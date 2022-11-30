@@ -1,5 +1,11 @@
 package battleGame;
-public class Enemy {
-    public int hp = 800;
-    public int atk = 100;
+public class Enemy extends Entity{
+    int baseAtk;
+    String type;
+
+    Enemy(String name, int health, int baseAtk, String type) {
+        super(name, health);
+        this.baseAtk = baseAtk;
+        this.type = type;
+    }
 }
