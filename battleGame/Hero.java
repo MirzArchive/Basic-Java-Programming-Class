@@ -9,4 +9,8 @@ public class Hero extends Entity{
         this.roles = roles;
     }
 
+    void doAttack (Enemy theEnemy) {
+        theEnemy.health -= baseAtk;
+    }
+
 }
