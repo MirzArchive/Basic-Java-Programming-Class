@@ -2,8 +2,10 @@ package battleGame;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import java.awt.event.*;
 
 import java.awt.*;
 
@@ -15,19 +17,50 @@ public class GUI_BattleGame { // Kiri attack hero, Kanan attack enemy
     static JLabel hpEnemy = new JLabel("HP");
     static JLabel status = new JLabel("Status",SwingConstants.CENTER);
     static JButton btAtkHero = new JButton("Attack");
-    static JButton btAtkEnemy = new JButton("Attack");
+    static JButton btHealHero = new JButton("Heal");
     public static void main(String[] args) {
         
         siapkanUI();
 
-        Hero wrsblng = new Hero(); // Wiro Sableng
-        Enemy mklmpr = new Enemy(); // Maklampir
+        Hero hero = new Hero("Wiro Sableng", 1000, 200, "Warrior"); // Wiro Sableng
+        Enemy enemy = new Enemy("Mak Lampir", 800, 400, "Orc"); // Maklampir
 
-        wrsblng.nama = "Wiro Sableng";
+        labelHero.setText(hero.name);
+        hpHero.setText("HP: " + hero.health);
+        hpEnemy.setText("HP: " + enemy.health);
 
-        labelHero.setText(wrsblng.nama);
-        hpHero.setText("HP: " + wrsblng.hp);
-        hpEnemy.setText("HP: " + mklmpr.hp);
+        ActionListener lstBtnAtkHero = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                hero.doAttack(enemy);
+                hpEnemy.setText("HP: " + enemy.health);
+
+                if (hero.health <= 0) {
+                    JOptionPane.showMessageDialog(window,"Game Over", "Kalah", JOptionPane.ERROR_MESSAGE);
+                    reset(hero, enemy);
+                }
+                else if (enemy.health <= 0) {
+                    JOptionPane.showMessageDialog(window,"Mak Lampir koid..", "Menang", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+
+            private void reset(Hero hero, Enemy enemy) {
+                hero.health = 1000;
+                enemy.health = 800;
+            }
+        };
+
+        btAtkHero.addActionListener(lstBtnAtkHero);
+
+        ActionListener lstBtnHealHero = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                hero.doHeal(100);
+                hpHero.setText("HP: " + hero.health);
+            }
+        };
+
+        btHealHero.addActionListener(lstBtnHealHero);
     }
 
     private static void siapkanUI() {
@@ -71,7 +104,7 @@ public class GUI_BattleGame { // Kiri attack hero, Kanan attack enemy
 
         cs.gridx = 1;
         cs.gridy = 3;
-        panel.add(btAtkEnemy, cs);
+        panel.add(btHealHero, cs);
 
         window.add(panel);
         window.setVisible(true);
